@@ -1,38 +1,24 @@
 ﻿using System;
-class HelloWorld
-{
-    static void Main()
-    {
-        Random random = new Random();
-        int day = random.Next(0, 2);
-        String time = Console.ReadLine();
-        int duration = Convert.ToInt32(time);
-        switch (day)
-        {
-            case 0:
-                Console.WriteLine("Absent");
-                break;
-            case 1:
-                Console.WriteLine("Present");
-                break;
-            default:
-                Console.WriteLine("Invalid number");
-                break;
 
-        }
-        switch (duration)
+namespace UC6
+{
+    internal class Program
+    {
+        static void Main(string[] args)
         {
-            case 4:
-                Console.WriteLine("Part time");
-                Console.WriteLine("Wage is " + 20 * 4);
-                break;
-            case 8:
-                Console.WriteLine("Full time");
-                Console.WriteLine("Wage is " + 20 * 8);
-                break;
-            default:
-                Console.WriteLine("Invalid working period");
-                break;
+            int totalNoOfDays = 20;
+            int totalNoOfHrs = 100;
+            int wageRate = 20;
+
+            int totalSalary = 0;
+
+            for (int day = 1; day <= totalNoOfDays && totalSalary < totalNoOfHrs * wageRate; day++)
+            {
+                totalSalary += 8 * wageRate;
+            }
+
+            Console.WriteLine($"Your salary at the end of the month is {totalSalary}");
+            Console.ReadLine();
         }
     }
 }
