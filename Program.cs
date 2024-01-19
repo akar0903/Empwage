@@ -1,19 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace employeewage
+class HelloWorld
 {
-    internal class Program
+    static void Main()
     {
-        static void Main(string[] args)
+        Random random = new Random();
+        int random_number = random.Next(0, 1);
+        if (random_number == 0)
         {
-            string wage = Console.ReadLine();
-            string hour = Console.ReadLine();
-            Console.WriteLine((Convert.ToInt32(wage) * (Convert.ToInt32(hour))));
-            Console.ReadLine();
+            Console.WriteLine("Absent");
+        }
+        else
+        {
+            Console.WriteLine("Present");
         }
     }
 }
